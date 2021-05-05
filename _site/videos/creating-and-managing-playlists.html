@@ -1,0 +1,797 @@
+﻿<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>プレイリストを作成、管理する</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">Brightcove ブエンゲージ<sup>™</sup></span></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">言語の選択</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="サポート"/> サポートへのお問い合わせ</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="システムステータス"/> システムステータス</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">ホーム</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/videos/">ビデオを管理する</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">プレイリストを作成、管理する</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+            <div class="col-sm-3 left-side-bar">
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+          <option value="">Brightcove ブのその他のドキュメント</option>
+          
+            
+              <option value="https://support.brightcove.com">ドキュメントホーム</option>
+            
+          
+            
+              <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
+            
+          
+            
+              <option value="https://beacon.support.brightcove.com">Brightcove ブビーコン</option>
+            
+          
+            
+              <option value="https://campaign.support.brightcove.com">Brightcove ブキャンペーン</option>
+            
+          
+            
+              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+            
+          
+            
+              <option value="https://live.support.brightcove.com">Brightcove ブ・ライブ</option>
+            
+          
+            
+              <option value="https://gallery.support.brightcove.com">Brightcove ブギャラリー</option>
+            
+          
+            
+              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+            
+          
+            
+              <option value="https://social.support.brightcove.com">Brightcove ブソーシャル</option>
+            
+          
+            
+              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+            
+          
+            
+              <option value="https://player.support.brightcove.com">Brightcove ブのプレーヤー開発</option>
+            
+          
+            
+              <option value="https://apis.support.brightcove.com">Video CloudプラットフォームAPI</option>
+            
+          
+            
+              <option value="https://sdks.support.brightcove.com">ビデオクラウドデバイス SDK</option>
+            
+          
+            
+              <option value="https://integrations.support.brightcove.com">統合および CMS コネクタ</option>
+            
+          
+            
+              <option value="https://general.support.brightcove.com">ビデオクラウドの一般情報</option>
+            
+          
+            
+              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+            
+          
+        </select>
+
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">ホーム</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/get-started/index.html">はじめに<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/get-started/brightcove-engage-system-requirements.html">Brightcove ブのエンゲージメントシステム要件</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/brightcove-engage-training-videos.html">Brightcove ブのエンゲージメントトレーニング動画</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/overview-create-edit-publish-mobile-app-exp.html">モバイルアプリエクスペリエンスの作成</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/overview-create-edit-publish-web-exp.html">ウェブエクスペリエンスの作成</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/getting-started-brightcove-engage.html">Brightcove ブエンゲージメントの入門</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/getting-started-brightcove-engage-trial.html">Brightcove ブ Engage トライアルの開始</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/step-by-step-mobile-app.html">ステップバイステップ-モバイルアプリエクスペリエンスの作成</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/step-by-step-web-exp.html">ステップバイステップ-Web エクスペリエンスの作成</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/using-brightcove-engage-app.html">Brightcove ブ Engage アプリケーションの使用</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/videos/index.html">ビデオの管理<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/videos/adding-text-tracks-to-a-video.html">テキストトラックの追加</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/capturing-poster-and-thumbnail-images.html">ポスターとサムネイル画像のキャプチャ</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/configuring-video-availability.html">ビデオ可用性の設定</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/creating-and-managing-playlists.html">プレイリストの作成と管理</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/editing-video-properties.html">ビデオプロパティの編集</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/editing-video-properties-using-quick-edit.html">クイック編集によるビデオプロパティの編集</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/exporting-video-data.html">ビデオデータの書き出し</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/managing-videos.html">ビデオを管理する</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/how-to-search-for-videos.html">動画の検索</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/uploading-poster-and-thumbnail-images.html">ポスターとサムネイル画像のアップロード</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/uploading-videos.html">動画をアップロード中</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/working-with-shared-videos.html">共有ビデオの操作</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/experiences/index.html">エクスペリエンスの創造<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/experiences/adding-logo-mobile-app-experience.html">モバイルアプリエクスペリエンスページへのロゴの追加</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/adding-objects-web-experience-pages.html">Web エクスペリエンスページへの画像、テキスト、リンクの追加</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/adding-videos-experience.html">エクスペリエンスへのビデオの追加</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/assigning-custom-domain-web-experience.html">Web エクスペリエンスへのカスタムドメインの割り当て</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/configuring-custom-domains-and-ssl.html">カスタムドメインと SSL の設定</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/configuring-experience-settings.html">エクスペリエンス設定の構成</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/configuring-single-sign-active-directory-federation-services.html">ADFS を使用したシングルサインオンの構成</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/controlling-access-experience.html">エクスペリエンスへのアクセスの制御</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/creating-access-control-profiles.html">アクセス制御プロファイルの作成</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/creating-and-managing-push-notifications.html">プッシュ通知の作成</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/creating-and-managing-experiences.html">エクスペリエンスの作成と管理</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/using-experience-editor-customize-mobile-app-experience.html">モバイルアプリエクスペリエンスのカスタマイズ</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/using-experience-editor-customize-web-experience.html">ウェブエクスペリエンスのカスタマイズ</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/editing-experience-details.html">エクスペリエンスの詳細の編集</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/managing-collections.html">コレクションの管理</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/managing-projects.html">プロジェクトの管理</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/overview-experience-templates.html">エクスペリエンステンプレートの概要</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/previewing-publishing-mobile-app-experience.html">モバイルアプリエクスペリエンスのプレビューと公開</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/previewing-publishing-web-experience.html">Web エクスペリエンスのプレビューと公開</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/securing-web-experience-ssl.html">SSL を使用した Web エクスペリエンスの保護</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/securing-experiences-auth0.html">Auth0 を使用したエクスペリエンスの保護</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/securing-experiences-passwordless.html">Auth0 パスワードレスを使用したエクスペリエンスの保護</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/securing-experiences-okta.html">Okta を使用したエクスペリエンスの保護</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/securing-experiences-pingone.html">PingOne を使用してエクスペリエンスをセキュリティで保護する</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/styling-mobile-app-experiences.html">モバイルアプリエクスペリエンスのスタイリング</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/styling-web-experiences.html">ウェブエクスペリエンスのスタイリング</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/live/index.html">ライブイベントの管理<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/live/creating-and-managing-live-events-using-live-module.html">ライブイベントの作成と管理</a></li>
+                  
+                
+                  
+                    <li><a href="/live/creating-video-clips.html">ビデオクリップを作成する</a></li>
+                  
+                
+                  
+                    <li><a href="/live/viewing-live-event-info-control-room.html">コントロールルームを使用する</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/analytics/index.html">アナリティクスの確認<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/analytics/reviewing-video-analytics.html">動画分析の確認</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/admin/index.html">アカウントの管理<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/admin/managing-account-information.html">アカウント情報の管理</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/managing-account-settings.html">アカウント設定の管理</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/managing-media-sharing-settings.html">メディア共有設定の管理</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/managing-profile-information.html">プロファイル情報の管理</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/managing-users.html">ユーザーの管理</a></li>
+                  
+                
+                  
+                    <li><a href="/admin/managing-video-fields.html">ビデオフィールドの管理</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/release-notes/index.html">リリースノート<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/release-notes/2020.html">2020年</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/support/index.html"><strong>サポート+ </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    
+                  
+                
+                  
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Brightcove ブのシステムステータスページの表示</a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">営業へのお問い合わせ</a></li>
+                  
+                
+                  
+                    <li><a href="/support/opening-case-with-brightcove-support.html">サポートケースを開く</a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="ナビゲーションメニュー"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">ページコンテンツ</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="新しいタブで開く" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+
+  
+    
+
+
+<article class="bcls-article">
+  <h1>プレイリストを作成、管理する</h1>
+  <summary>このトピックでは、プレイリストを作成および管理する方法について説明します。</summary>
+  <section class="bcls-section">
+    <div data-experience="599358c7e7588f000f8a6b5f" data-playlist-id="1652748071701828655">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_599358c7e7588f000f8a6b5f/live.js"></script>
+    <p>プレイリストは、ビデオプレーヤーで再生するために特定の順序でグループ化されるビデオのコレクションです。[ <strong>動画</strong> ] ページでは、プレイリストの作成や再生リストへの動画の追加が簡単に行えます。プレイリストを作成したら、Brightcove Engage™ アプリケーションで公開できます。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="types">プレイリストのタイプ</h2>
+    <p>プレイリストは、以下の2つのタイプがあります。</p>
+    <ul>
+      <li><strong>手動</strong> -手動プレイリストでは、特定の動画を再生リストに割り当てて、手動で並べ替えます。</li>
+      <li>スマート- <strong>スマートプレイリストでは</strong>、動画タグやその他の動画プロパティに基づいて、再生リストの動画の一覧が自動的に作成されます。スマートプレイリストは動的で、ビデオライブラリ内の動画とプレイリストを定義するルールに基づいて自動的に更新されます。</li>
+    </ul>
+    <p>プレイリストに追加できる動画は最大100本（手動とスマートの両方）。プレーヤーのプレイリストに最初に読み込まれる動画は、再生リストのタイプによって決まります。</p>
+    <ul>
+      <li><strong>手動プレイリスト</strong> -動画は、手動再生リストのビデオの順序に基づいて再生リストに読み込まれます。</li>
+      <li><strong>スマートプレイリスト</strong> - <strong>再生順序プレイリストの設定に基づいて、ビデオがプレイリストに読み込まれます</strong>。 </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="mobile_app">プレイリストとモバイルアプリのエクスペリエンス</h2>
+    <p>モバイルアプリエクスペリエンスを作成する場合、エクスペリエンスの最初のビデオが注目動画として使用されます。注目のビデオがアプリケーションの上部に表示されます。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/add-videos-featured-video.png"/></figure>
+    <p>Brightcove ブでは、<strong>表示される注目の動画を簡単に制御できるように</strong>、1 つの動画で注目動画プレイリストを作成することをお勧めします。これにより、プレイリストを編集して別の動画を選択することで、おすすめの動画を簡単に変更できます。これにより、エクスペリエンスを編集して再公開しなくても、おすすめの動画を簡単に変更できます。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="create">プレイリストを作成する</h2>
+    <p>再生リストを作成するには、[ <strong>動画</strong> ] ページを開き、次の手順に従います。</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>サイドナビゲーションパネルで <strong>[プレイリストの作成]</strong> をクリックします。新規プレイリストダイアログが開きます。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/playlist-new-manual.png"/></figure>
+        <aside class="bcls-aside bcls-aside--information language-editable">注：サイドナビゲーションボタン <img alt="" src="/assets/images/videos/side-nav-button.png"/> をクリックして、サイドナビゲーションパネルの表示と非表示を切り替えることができます。</aside>
+      </li>
+      <li>プレイリストのタイプを[<strong>手動</strong>]または[<strong>スマート</strong>]から選択します。</li>
+      <li>次のガイドラインに従って、<strong>プレイリスト名を入力します</strong>。
+        <ul>
+          <li>名前は100文字に制限されています</li>
+          <li>不正な文字:/</li>
+        </ul>
+      </li>
+      <li>（任意）[<strong>リファレンスID</strong>]および[<strong>説明</strong>]に入力します。</li>
+      <li>サイドバーにプレイリストを表示するには、[<strong>サイドバーにプレイリストを表示</strong>]を選択します。
+        <aside class="bcls-aside bcls-aside--information language-editable">注：サイドバーには最大 100 個のプレイリストが表示されます。</aside>
+      </li>
+      <li>[<strong>保存</strong>]をクリックします。</li>
+    </ol>
+    <h3>スマートプレイリストを使用する</h3>
+    <p>スマートプレイリストを作成する場合は、以下の設定も使用できます。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/playlist-new-smart.png"/></figure>
+    <ul>
+      <li><strong>タグ</strong> - タグを使用して、プレイリストに表示する動画を定義します。[ <strong> Tags </strong> ] ドロップダウンには、次のオプションがあります。
+        <ul>
+          <li><strong>1 つ以上のタグを含む</strong> -リストされている 1 つ以上のタグを含む動画を含める</li>
+          <li><strong>すべてを含む</strong> -プレイリスト内のすべての動画にリストされているすべてのタグを持っていることを要求します</li>
+        </ul>
+        <p>[ <strong> Tags </strong> ] テキストフィールドに、プレイリストの定義に使用する 1 つまたは複数のタグ (カンマ区切り) を入力します。</p>
+      </li>
+      <li><strong>再生順序</strong> - プレイリスト内の動画の再生順序を管理します。以下のオプションが利用できます。
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th width="35%">再生順序</th>
+              <th width="65%">説明</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>アクティブ化された日（古い順）</td>
+              <td>動画がアクティブ化された日付に基づいて、最も古い動画が最初になります</td>
+            </tr>
+            <tr>
+              <td>アクティブ化された日（新しい順）</td>
+              <td>動画が有効化された日付に基づいて、最新の動画が最初に表示されます</td>
+            </tr>
+            <tr>
+              <td>ビデオ名 (A-Z)</td>
+              <td>動画名のアルファベット順</td>
+            </tr>
+            <tr>
+              <td>総再生回数順</td>
+              <td>合計ビデオ再生数に基づきます</td>
+            </tr>
+            <tr>
+              <td>先週よく再生された順</td>
+              <td>最後の週の総動画再生数に基づきます</td>
+            </tr>
+            <tr>
+              <td>開始日（古い順）</td>
+              <td>動画の開始予定日に基づいて、最も古い動画が最初になります。開始日が指定されていない動画は、開始日で並べ替えられるプレイリストには表示されません。</td>
+            </tr>
+            <tr>
+              <td>開始日（新しい順）</td>
+              <td>動画の開始予定日に基づいて、最新の動画が最初に表示されます。開始日が指定されていない動画は、開始日で並べ替えられるプレイリストには表示されません。 </td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li><strong>動画数の制限</strong> - プレイリストに入れる動画の最大数を入力します。</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="addmanual">手動プレイリストに動画を追加する</h2>
+    <p>動画を手動プレイリストに追加するには、次の手順を行います。</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>プレイリストに追加する動画の隣のボックスを選択します。</li>
+      <li>ページ上部の [ <strong>その他] [&gt; プレイリストに追加</strong> ] をクリックします。</li>
+      <li>動画を追加するプレイリストを選択します。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/playlist-manual-add-videos.png"/></figure>
+      </li>
+      <li>[<strong>追加</strong>]をクリックします。手動プレイリストに追加された動画は、プレイリストの一番上に追加されます。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="order">プレイリスト内の動画の順序を変更する</h2>
+    <p>プレイリストの動画の順序を変更するには、使用しているプレイリストのタイプに応じた手順を行います。</p>
+    <h3>手動再生リストのビデオの順序を変更する</h3>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>以下の方法の1つを使用して、プレイリストを開きます。
+        <ul>
+          <li>サイド・ナビゲーション・パネルのプレイリスト名をクリックします</li>
+          <li><strong>サイド・ナビゲーション・パネルのすべてのプレイリストをクリックし</strong>、プレイリストを見つけて、プレイリスト名のリンクをクリックします。</li>
+        </ul>
+      </li>
+      <li>プレイリスト内の動画のリストが表示されます。</li>
+      <li>動画をクリックし、順序の新しい場所にドラッグします。</li>
+    </ol>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/playlist-manual-change-order.png"/></figure>
+    <aside class="bcls-aside bcls-aside--information language-editable">注：<strong>再生順フィールドを編集して、ビデオの順序を変更することもできます</strong>。</aside>
+    <h3>スマートプレイリストの動画の順序を変更する</h3>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>そのプレイリストがサイドバーに表示されている場合、プレイリストをクリックし、次にプレイリストの隣の下向き矢印をクリックし、[<strong>設定の編集</strong>]をクリックします。</li>
+      <li>そのプレイリストがサイドバーに表示されていない場合、サイドナビゲーションの[<strong>すべてのプレイリスト</strong>]見出しをクリックします。次にプレイリストを見つけて、プレイリスト名リンクをクリックし、[<strong>設定の編集</strong>]をクリックします。</li>
+      <li>[<strong>再生順序</strong>]で、そのプレイリストの新しい再生順を選択します。</li>
+      <li>[<strong>保存</strong>]をクリックします。</li>
+    </ol>
+    <p>スマートプレイリストは、プレーヤーが利用可能なビデオ情報から読み込まれたときに動的に作成されるため、注文は常に現在の状態を反映する必要があります。 </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="edit">プレイリストの設定を編集する</h2>
+    <p>手動プレイリストまたはスマートプレイリストの設定を編集するには、次の手順に従います。</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>そのプレイリストがサイドバーに表示されている場合、プレイリストをクリックし、次にプレイリストの隣の下向き矢印をクリックし、[<strong>設定の編集</strong>]をクリックします。</li>
+      <li>そのプレイリストがサイドバーに表示されていない場合、サイドナビゲーションの[<strong>すべてのプレイリスト</strong>]見出しをクリックします。次にプレイリストを見つけて、プレイリスト名リンクをクリックし、[<strong>設定の編集</strong>]をクリックします。</li>
+      <li>プレイリストの設定を編集し、[<strong>保存</strong>]をクリックします。</li>
+    </ol>
+    <p>そのプレイリストがサイドナビゲーションパネルに表示されている場合、プレイリストをクリックし、次にプレイリストの隣の下向き矢印をクリックし、[<strong>設定の編集</strong>]をクリックします。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="delete">プレイリストを削除する</h2>
+    <p>プレイリストを削除するには、次の手順を行います。</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>すべてのプレイリストのリストを表示するには、[<strong>すべてのプレイリスト</strong>]をクリックします。</li>
+      <li>削除するプレイリストの隣のチェックボックスをチェックします。</li>
+      <li>削除ボタン（<img alt="" src="/assets/images/videos/delete-button.png"/>）をクリックします。</li>
+      <li>[ <strong>プレイリストを削除</strong> ] をクリックして、削除を確定します。</li>
+    </ol>
+    <p>そのプレイリストがサイドナビゲーションパネルに表示されている場合、プレイリストをクリックし、次にプレイリストの隣の下向き矢印をクリックし、[<strong>削除</strong>]をクリックします。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="remove">手動プレイリストから動画を削除する</h2>
+    <p>手動再生リストから動画を削除するには、次の手順に従います。</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>次のいずれかの方法を使用して、手動プレイリストを開きます。
+        <ul>
+          <li>サイド・ナビゲーション・パネルのプレイリスト名をクリックします</li>
+          <li><strong>サイド・ナビゲーション・パネルのすべてのプレイリストをクリックし</strong>、プレイリストを見つけてプレイリスト名をクリックします。</li>
+        </ul>
+      </li>
+      <li>プレイリスト内の動画のリストが表示されます。</li>
+      <li>削除する動画の隣のチェックボックスをチェックします。</li>
+      <li>[ <strong>ビデオを削除] [&gt; プレイリストから削除</strong> ] をクリックします。</li>
+    </ol>
+    <p>また、動画プロパティを編集して、手動プレイリストから動画を削除することもできます。[ <strong>ビデオ情報</strong> ] セクションで、[ <strong>手動プレイリスト] セクションから再生リスト名を削除します</strong>。</p>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">ページコンテンツ</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<footer class="bcls-footer" role="contentinfo">  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Brightcove ブサポート</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">システムステータス</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">サポートへのお問い合わせ</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">ドキュメンテーション</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>トレーニング</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">オンラインコース</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">コースに登録する</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Brightcove University</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">お問合せ</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">プライバシー</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">利用規約</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
