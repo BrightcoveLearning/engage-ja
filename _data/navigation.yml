@@ -1,0 +1,162 @@
+- section: 
+  name: ホーム
+  url: /index.html
+- section: 
+  name: はじめに
+  url: /get-started/index.html
+  docs:
+    - name: BrightcoveEngageシステム要件
+      url: /get-started/brightcove-engage-system-requirements.html
+    - name: Brightcove Engageトレーニングビデオ
+      url: /get-started/brightcove-engage-training-videos.html
+    - name: モバイルアプリエクスペリエンスの作成
+      url: /get-started/overview-create-edit-publish-mobile-app-exp.html
+    - name: Web エクスペリエンスの作成
+      url: /get-started/overview-create-edit-publish-web-exp.html
+    - name: ブライトコーブ・エンゲージ
+      url: /get-started/getting-started-brightcove-engage.html
+    - name: ブライトコーブ・エンゲゲートライアルを始めよう
+      url: /get-started/getting-started-brightcove-engage-trial.html
+    - name: ステップバイステップ-モバイルアプリエクスペリエンスの作成
+      url: /get-started/step-by-step-mobile-app.html
+    - name: ステップバイステップ-Web エクスペリエンスの作成
+      url: /get-started/step-by-step-web-exp.html
+    - name: Brightcove Engage アプリケーションの使用
+      url: /get-started/using-brightcove-engage-app.html
+- section: 
+  name: 動画を管理する
+  url: /videos/index.html
+  docs:
+    - name: テキストトラックの追加
+      url: /videos/adding-text-tracks-to-a-video.html
+    - name: ポスターとサムネイル画像のキャプチャ
+      url: /videos/capturing-poster-and-thumbnail-images.html
+    - name: ビデオ可用性の設定
+      url: /videos/configuring-video-availability.html
+    - name: プレイリストの作成と管理
+      url: /videos/creating-and-managing-playlists.html
+    - name: ビデオプロパティの編集
+      url: /videos/editing-video-properties.html
+    - name: クイック編集でビデオプロパティを編集する
+      url: /videos/editing-video-properties-using-quick-edit.html
+    - name: ビデオデータの書き出し
+      url: /videos/exporting-video-data.html
+    - name: 動画を管理する
+      url: /videos/managing-videos.html
+    - name: 動画を検索する
+      url: /videos/how-to-search-for-videos.html
+    - name: ポスターとサムネイル画像のアップロード
+      url: /videos/uploading-poster-and-thumbnail-images.html
+    - name: 動画をアップロードする
+      url: /videos/uploading-videos.html
+    - name: 共有動画の操作
+      url: /videos/working-with-shared-videos.html
+- section: 
+  name: エクスペリエンスの作成
+  url: /experiences/index.html
+  docs:
+    - name: モバイルアプリのエクスペリエンスページへのロゴの追加
+      url: /experiences/adding-logo-mobile-app-experience.html
+    - name: Web エクスペリエンスページへの画像、テキスト、リンクの追加
+      url: /experiences/adding-objects-web-experience-pages.html
+    - name: エクスペリエンスへのビデオの追加
+      url: /experiences/adding-videos-experience.html
+    - name: Web エクスペリエンスへのカスタムドメインの割り当て
+      url: /experiences/assigning-custom-domain-web-experience.html
+    - name: カスタムドメインと SSL の設定
+      url: /experiences/configuring-custom-domains-and-ssl.html
+    - name: エクスペリエンス設定の構成
+      url: /experiences/configuring-experience-settings.html
+    - name: ADFS を使用したシングルサインオンの構成
+      url: /experiences/configuring-single-sign-active-directory-federation-services.html
+    - name: エクスペリエンスへのアクセスの制御
+      url: /experiences/controlling-access-experience.html
+    - name: アクセス制御プロファイルの作成
+      url: /experiences/creating-access-control-profiles.html
+    - name: プッシュ通知の作成
+      url: /experiences/creating-and-managing-push-notifications.html
+    - name: エクスペリエンスの作成と管理
+      url: /experiences/creating-and-managing-experiences.html
+    - name: モバイルアプリエクスペリエンスのカスタマイズ
+      url: /experiences/using-experience-editor-customize-mobile-app-experience.html
+    - name: ウェブエクスペリエンスのカスタマイズ
+      url: /experiences/using-experience-editor-customize-web-experience.html
+    - name: エクスペリエンスの詳細の編集
+      url: /experiences/editing-experience-details.html
+    - name: コレクションの管理
+      url: /experiences/managing-collections.html
+    - name: プロジェクトの管理
+      url: /experiences/managing-projects.html   
+    - name: エクスペリエンステンプレートの概要
+      url: /experiences/overview-experience-templates.html
+    - name: モバイルアプリエクスペリエンスのプレビューと公開
+      url: /experiences/previewing-publishing-mobile-app-experience.html
+    - name: Web エクスペリエンスのプレビューと公開
+      url: /experiences/previewing-publishing-web-experience.html
+    - name: SSL を使用した Web エクスペリエンスの保護
+      url: /experiences/securing-web-experience-ssl.html
+    - name: Auth0 を使用したエクスペリエンスの保護
+      url: /experiences/securing-experiences-auth0.html
+    - name: Auth0 パスワードレスを使用したエクスペリエンスの保護
+      url: /experiences/securing-experiences-passwordless.html
+    - name: Okta を使用したエクスペリエンスの保護
+      url: /experiences/securing-experiences-okta.html
+    - name: PingOne を使用してエクスペリエンスをセキュリティで保護する
+      url: /experiences/securing-experiences-pingone.html
+    - name: モバイルアプリエクスペリエンスのスタイリング
+      url: /experiences/styling-mobile-app-experiences.html
+    - name: ウェブエクスペリエンスのスタイリング
+      url: /experiences/styling-web-experiences.html
+- section: 
+  name: ライブイベントの管理
+  url: /live/index.html
+  docs:
+    - name: ライブイベントの作成と管理
+      url: /live/creating-and-managing-live-events-using-live-module.html
+    - name: ビデオクリップを作成する
+      url: /live/creating-video-clips.html
+    - name: コントロールルームを使う
+      url: /live/viewing-live-event-info-control-room.html
+- section: 
+  name: アナリティクスの確認
+  url: /analytics/index.html
+  docs:
+    - name: ビデオ分析のレビュー
+      url: /analytics/reviewing-video-analytics.html
+- section: 
+  name: アカウントの管理
+  url: /admin/index.html
+  docs:
+    - name: アカウント情報の管理
+      url: /admin/managing-account-information.html
+    - name: アカウント設定の管理
+      url: /admin/managing-account-settings.html
+    - name: メディア共有設定の管理
+      url: /admin/managing-media-sharing-settings.html
+    - name: プロファイル情報の管理
+      url: /admin/managing-profile-information.html
+    - name: ユーザーの管理
+      url: /admin/managing-users.html
+    - name: ビデオフィールドの管理
+      url: /admin/managing-video-fields.html
+- section: 
+  name: リリースノート
+  url: /release-notes/index.html
+  docs:
+    - name: 2020年
+      url: /release-notes/2020.html
+- section: 
+  name: サポート
+  url: /support/index.html
+  docs:
+    - name: 'ブライトコーブのシステムステータスページの表示'
+      url: '/support/viewing-brightcove-system-status-page.html'
+    - name: '営業へのお問い合わせ'
+      url: '/support/contact-sales.html'
+    - name: 'サポートケースを開く'
+      url: '/support/opening-case-with-brightcove-support.html'
+    - name: 'サポートポータルのパスワードをリセットする'
+      url: '/support/reset-support-portal-password.html'
+# TODO correct and add additional sections/pages
+# TODO note that the order of items here determines the order in navigation
+# TODO indentation in YAML is crucial and must be with spaces (not tabs!)

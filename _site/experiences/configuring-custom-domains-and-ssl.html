@@ -1,37 +1,47 @@
-﻿<!doctype html>
-<html lang="ja">
+<!doctype html>
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   
-  <title>カスタムドメインおよびSSLを設定する</title>
+  <title>カスタムドメインと SSL の設定</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/learning-paths/learning-paths.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
   <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script translate="no">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
+	<script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body class="body">
-
-<header>
+ <header>
   <div class="div-header">
-    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">Brightcove エンゲージ<sup>™</sup></span></a>
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/SVG/engage-logo.svg" alt="Brightcove"></a>
 <!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">言語の選択</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+<select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
 
 <script>
 /* <![CDATA[ */
@@ -41,410 +51,236 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 
 
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="サポート"/> サポートへのお問い合わせ</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="システムステータス"/> システムステータス</a></span> <br/>
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><i data-feather="help-circle"></i> サポートに連絡する</a><span style="vertical-align: middle;margin-left:1em;margin-right:1em;">| </span><a href="https://status.brightcove.com/"><i data-feather="cloud"></i> システムステータス</a></span>
+    <br>
     
   </div>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb arr-right">
       
-      <li class="breadcrumb-item"><a href="/">ホーム</a></li>
+      <li class="breadcrumb-item first-item"><a href="/">ホーム</a></li>
+        
+      <li class="breadcrumb-item"><a href="/experiences/">Experiences</a></li>
       
-      
-      
-      <li class="breadcrumb-item"><a href="/experiences/">体験談</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">カスタムドメインおよびSSLを設定する</li>
+      <li class="breadcrumb-item active" aria-current="page">カスタムドメインと SSL の設定</li>
     </ol>
   </nav>
-</header>
-<div class="container">
+</header> <div class="container">
     <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Brightcove のその他のドキュメント</option>
-          
-            
-              <option value="https://support.brightcove.com">ドキュメントホーム</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Brightcove ビーコン</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Brightcove キャンペーン</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove ・ライブ</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove ギャラリー</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove ソーシャル</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Brightcove のプレーヤー開発</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">Video CloudプラットフォームAPI</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">ビデオクラウドデバイス SDK</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">統合および CMS コネクタ</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">ビデオクラウドの一般情報</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
+      <div class="col-sm-3 left-side-bar">
+				<select id="site_select" class="bcls-select" style="margin-left: 1rem;">
+					<option value="">ブライトコーブのその他のドキュメント</option>
+					 
+							<option value="https://support.brightcove.com">ドキュメンテーションホーム</option>
+						  
+							<option value="">-ビデオクラウド-</option>
+						  
+							<option value="https://studio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドスタジオ</option>
+						  
+							<option value="https://player.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブプレイヤー開発</option>
+						  
+							<option value="https://apis.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドプラットフォームAPI</option>
+						  
+							<option value="https://sdks.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドデバイスSDK</option>
+						  
+							<option value="https://integrations.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;統合とCMSコネクタ</option>
+						  
+							<option value="https://general.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドの一般情報</option>
+						  
+							<option value="">-ビデオエッセンシャル-</option>
+						  
+							<option value="https://beacon.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブビーコン</option>
+						  
+							<option value="https://live.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブライブ</option>
+						  
+							<option value="https://zencoder.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp; Zencoder</option>
+						  
+							<option value="">-ビデオクラウドアドオン-</option>
+						  
+							<option value="https://campaign.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブキャンペーン</option>
+						  
+							<option value="https://engage.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Engage</option>
+						  
+							<option value="https://gallery.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブギャラリー</option>
+						  
+							<option value="https://studio.support.brightcove.com/social/index.html">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブソーシャル</option>
+						  
+							<option value="https://ssai.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブSSAI</option>
+						 
+				</select>
         <nav class="sidenav" id="side_nav">
-          
-            
+           
             <h5><a href="/index.html">ホーム</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/get-started/index.html">はじめに<strong> + </strong></a></h5>
+              
+              <h5 class="submenu-header"><a href="/get-started/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;はじめに</a></h5>
               <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/get-started/brightcove-engage-system-requirements.html">Brightcove のエンゲージメントシステム要件</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/brightcove-engage-training-videos.html">Brightcove のエンゲージメントトレーニング動画</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-create-edit-publish-mobile-app-exp.html">モバイルアプリエクスペリエンスの作成</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-create-edit-publish-web-exp.html">ウェブエクスペリエンスの作成</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-engage.html">Brightcove エンゲージメントの入門</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-engage-trial.html">Brightcove  Engage トライアルの開始</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/step-by-step-mobile-app.html">ステップバイステップ-モバイルアプリエクスペリエンスの作成</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/step-by-step-web-exp.html">ステップバイステップ-Web エクスペリエンスの作成</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/using-brightcove-engage-app.html">Brightcove  Engage アプリケーションの使用</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/videos/index.html">ビデオの管理<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/videos/adding-text-tracks-to-a-video.html">テキストトラックの追加</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/capturing-poster-and-thumbnail-images.html">ポスターとサムネイル画像のキャプチャ</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/configuring-video-availability.html">ビデオ可用性の設定</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/creating-and-managing-playlists.html">プレイリストの作成と管理</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/editing-video-properties.html">ビデオプロパティの編集</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/editing-video-properties-using-quick-edit.html">クイック編集によるビデオプロパティの編集</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/exporting-video-data.html">ビデオデータの書き出し</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/managing-videos.html">ビデオを管理する</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/how-to-search-for-videos.html">動画の検索</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/uploading-poster-and-thumbnail-images.html">ポスターとサムネイル画像のアップロード</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/uploading-videos.html">動画をアップロード中</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/working-with-shared-videos.html">共有ビデオの操作</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/experiences/index.html">エクスペリエンスの創造<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/experiences/adding-logo-mobile-app-experience.html">モバイルアプリエクスペリエンスページへのロゴの追加</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/adding-objects-web-experience-pages.html">Web エクスペリエンスページへの画像、テキスト、リンクの追加</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/adding-videos-experience.html">エクスペリエンスへのビデオの追加</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/assigning-custom-domain-web-experience.html">Web エクスペリエンスへのカスタムドメインの割り当て</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-custom-domains-and-ssl.html">カスタムドメインと SSL の設定</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-experience-settings.html">エクスペリエンス設定の構成</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-single-sign-active-directory-federation-services.html">ADFS を使用したシングルサインオンの構成</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/controlling-access-experience.html">エクスペリエンスへのアクセスの制御</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-access-control-profiles.html">アクセス制御プロファイルの作成</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-and-managing-push-notifications.html">プッシュ通知の作成</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-and-managing-experiences.html">エクスペリエンスの作成と管理</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/using-experience-editor-customize-mobile-app-experience.html">モバイルアプリエクスペリエンスのカスタマイズ</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/using-experience-editor-customize-web-experience.html">ウェブエクスペリエンスのカスタマイズ</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/editing-experience-details.html">エクスペリエンスの詳細の編集</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/managing-collections.html">コレクションの管理</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/managing-projects.html">プロジェクトの管理</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/overview-experience-templates.html">エクスペリエンステンプレートの概要</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/previewing-publishing-mobile-app-experience.html">モバイルアプリエクスペリエンスのプレビューと公開</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/previewing-publishing-web-experience.html">Web エクスペリエンスのプレビューと公開</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-web-experience-ssl.html">SSL を使用した Web エクスペリエンスの保護</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-experiences-auth0.html">Auth0 を使用したエクスペリエンスの保護</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-experiences-passwordless.html">Auth0 パスワードレスを使用したエクスペリエンスの保護</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-experiences-okta.html">Okta を使用したエクスペリエンスの保護</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/securing-experiences-pingone.html">PingOne を使用してエクスペリエンスをセキュリティで保護する</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/styling-mobile-app-experiences.html">モバイルアプリエクスペリエンスのスタイリング</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/styling-web-experiences.html">ウェブエクスペリエンスのスタイリング</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/live/index.html">ライブイベントの管理<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/live/creating-and-managing-live-events-using-live-module.html">ライブイベントの作成と管理</a></li>
-                  
-                
-                  
-                    <li><a href="/live/creating-video-clips.html">ビデオクリップを作成する</a></li>
-                  
-                
-                  
-                    <li><a href="/live/viewing-live-event-info-control-room.html">コントロールルームを使用する</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/analytics/index.html">アナリティクスの確認<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/analytics/reviewing-video-analytics.html">動画分析の確認</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/admin/index.html">アカウントの管理<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/admin/managing-account-information.html">アカウント情報の管理</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-account-settings.html">アカウント設定の管理</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-media-sharing-settings.html">メディア共有設定の管理</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-profile-information.html">プロファイル情報の管理</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-users.html">ユーザーの管理</a></li>
-                  
-                
-                  
-                    <li><a href="/admin/managing-video-fields.html">ビデオフィールドの管理</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/release-notes/index.html">リリースノート<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/2020.html">2020年</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/support/index.html"><strong>サポート+ </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
+                 
+                    <li><a href="/get-started/brightcove-engage-system-requirements.html">BrightcoveEngageシステム要件</a></li>
                     
-                  
-                
-                  
-                    <li><a href="/support/viewing-brightcove-system-status-page.html">Brightcove のシステムステータスページの表示</a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">営業へのお問い合わせ</a></li>
-                  
-                
-                  
-                    <li><a href="/support/opening-case-with-brightcove-support.html">サポートケースを開く</a></li>
-                  
-                
+                    <li><a href="/get-started/brightcove-engage-training-videos.html">Brightcove Engageトレーニングビデオ</a></li>
+                    
+                    <li><a href="/get-started/overview-create-edit-publish-mobile-app-exp.html">モバイルアプリエクスペリエンスの作成</a></li>
+                    
+                    <li><a href="/get-started/overview-create-edit-publish-web-exp.html">Web エクスペリエンスの作成</a></li>
+                    
+                    <li><a href="/get-started/getting-started-brightcove-engage.html">ブライトコーブ・エンゲージ</a></li>
+                    
+                    <li><a href="/get-started/getting-started-brightcove-engage-trial.html">ブライトコーブ・エンゲゲートライアルを始めよう</a></li>
+                    
+                    <li><a href="/get-started/step-by-step-mobile-app.html">ステップバイステップ-モバイルアプリエクスペリエンスの作成</a></li>
+                    
+                    <li><a href="/get-started/step-by-step-web-exp.html">ステップバイステップ-Web エクスペリエンスの作成</a></li>
+                    
+                    <li><a href="/get-started/using-brightcove-engage-app.html">Brightcove Engage アプリケーションの使用</a></li>
+                   
               </ul>
-            
-          
+              
+              <h5 class="submenu-header"><a href="/videos/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;動画を管理する</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/videos/adding-text-tracks-to-a-video.html">テキストトラックの追加</a></li>
+                    
+                    <li><a href="/videos/capturing-poster-and-thumbnail-images.html">ポスターとサムネイル画像のキャプチャ</a></li>
+                    
+                    <li><a href="/videos/configuring-video-availability.html">ビデオ可用性の設定</a></li>
+                    
+                    <li><a href="/videos/creating-and-managing-playlists.html">プレイリストの作成と管理</a></li>
+                    
+                    <li><a href="/videos/editing-video-properties.html">ビデオプロパティの編集</a></li>
+                    
+                    <li><a href="/videos/editing-video-properties-using-quick-edit.html">クイック編集でビデオプロパティを編集する</a></li>
+                    
+                    <li><a href="/videos/exporting-video-data.html">ビデオデータの書き出し</a></li>
+                    
+                    <li><a href="/videos/managing-videos.html">動画を管理する</a></li>
+                    
+                    <li><a href="/videos/how-to-search-for-videos.html">動画を検索する</a></li>
+                    
+                    <li><a href="/videos/uploading-poster-and-thumbnail-images.html">ポスターとサムネイル画像のアップロード</a></li>
+                    
+                    <li><a href="/videos/uploading-videos.html">動画をアップロードする</a></li>
+                    
+                    <li><a href="/videos/working-with-shared-videos.html">共有動画の操作</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/experiences/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;エクスペリエンスの作成</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/experiences/adding-logo-mobile-app-experience.html">モバイルアプリのエクスペリエンスページへのロゴの追加</a></li>
+                    
+                    <li><a href="/experiences/adding-objects-web-experience-pages.html">Web エクスペリエンスページへの画像、テキスト、リンクの追加</a></li>
+                    
+                    <li><a href="/experiences/adding-videos-experience.html">エクスペリエンスへのビデオの追加</a></li>
+                    
+                    <li><a href="/experiences/assigning-custom-domain-web-experience.html">Web エクスペリエンスへのカスタムドメインの割り当て</a></li>
+                    
+                    <li><a href="/experiences/configuring-custom-domains-and-ssl.html">カスタムドメインと SSL の設定</a></li>
+                    
+                    <li><a href="/experiences/configuring-experience-settings.html">エクスペリエンス設定の構成</a></li>
+                    
+                    <li><a href="/experiences/configuring-single-sign-active-directory-federation-services.html">ADFS を使用したシングルサインオンの構成</a></li>
+                    
+                    <li><a href="/experiences/controlling-access-experience.html">エクスペリエンスへのアクセスの制御</a></li>
+                    
+                    <li><a href="/experiences/creating-access-control-profiles.html">アクセス制御プロファイルの作成</a></li>
+                    
+                    <li><a href="/experiences/creating-and-managing-push-notifications.html">プッシュ通知の作成</a></li>
+                    
+                    <li><a href="/experiences/creating-and-managing-experiences.html">エクスペリエンスの作成と管理</a></li>
+                    
+                    <li><a href="/experiences/using-experience-editor-customize-mobile-app-experience.html">モバイルアプリエクスペリエンスのカスタマイズ</a></li>
+                    
+                    <li><a href="/experiences/using-experience-editor-customize-web-experience.html">ウェブエクスペリエンスのカスタマイズ</a></li>
+                    
+                    <li><a href="/experiences/editing-experience-details.html">エクスペリエンスの詳細の編集</a></li>
+                    
+                    <li><a href="/experiences/managing-collections.html">コレクションの管理</a></li>
+                    
+                    <li><a href="/experiences/managing-projects.html">プロジェクトの管理</a></li>
+                    
+                    <li><a href="/experiences/overview-experience-templates.html">エクスペリエンステンプレートの概要</a></li>
+                    
+                    <li><a href="/experiences/previewing-publishing-mobile-app-experience.html">モバイルアプリエクスペリエンスのプレビューと公開</a></li>
+                    
+                    <li><a href="/experiences/previewing-publishing-web-experience.html">Web エクスペリエンスのプレビューと公開</a></li>
+                    
+                    <li><a href="/experiences/securing-web-experience-ssl.html">SSL を使用した Web エクスペリエンスの保護</a></li>
+                    
+                    <li><a href="/experiences/securing-experiences-auth0.html">Auth0 を使用したエクスペリエンスの保護</a></li>
+                    
+                    <li><a href="/experiences/securing-experiences-passwordless.html">Auth0 パスワードレスを使用したエクスペリエンスの保護</a></li>
+                    
+                    <li><a href="/experiences/securing-experiences-okta.html">Okta を使用したエクスペリエンスの保護</a></li>
+                    
+                    <li><a href="/experiences/securing-experiences-pingone.html">PingOne を使用してエクスペリエンスをセキュリティで保護する</a></li>
+                    
+                    <li><a href="/experiences/styling-mobile-app-experiences.html">モバイルアプリエクスペリエンスのスタイリング</a></li>
+                    
+                    <li><a href="/experiences/styling-web-experiences.html">ウェブエクスペリエンスのスタイリング</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/live/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;ライブイベントの管理</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/live/creating-and-managing-live-events-using-live-module.html">ライブイベントの作成と管理</a></li>
+                    
+                    <li><a href="/live/creating-video-clips.html">ビデオクリップを作成する</a></li>
+                    
+                    <li><a href="/live/viewing-live-event-info-control-room.html">コントロールルームを使う</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/analytics/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;アナリティクスの確認</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/analytics/reviewing-video-analytics.html">ビデオ分析のレビュー</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/admin/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;アカウントの管理</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/admin/managing-account-information.html">アカウント情報の管理</a></li>
+                    
+                    <li><a href="/admin/managing-account-settings.html">アカウント設定の管理</a></li>
+                    
+                    <li><a href="/admin/managing-media-sharing-settings.html">メディア共有設定の管理</a></li>
+                    
+                    <li><a href="/admin/managing-profile-information.html">プロファイル情報の管理</a></li>
+                    
+                    <li><a href="/admin/managing-users.html">ユーザーの管理</a></li>
+                    
+                    <li><a href="/admin/managing-video-fields.html">ビデオフィールドの管理</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/release-notes/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;リリースノート</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/release-notes/2020.html">2020年</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/support/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;サポート</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">ブライトコーブのシステムステータスページの表示</a></li>
+                    
+                    <li><a href="/support/contact-sales.html">営業へのお問い合わせ</a></li>
+                    
+                    <li><a href="/support/opening-case-with-brightcove-support.html">サポートケースを開く</a></li>
+                    
+                    <li><a href="/support/reset-support-portal-password.html">サポートポータルのパスワードをリセットする</a></li>
+                   
+              </ul>
+             
       </nav>
     </div>
     <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
   <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="ナビゲーションメニュー"/></p>
+ <p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
 
 <!-- search bar -->
 <div id="nav-search-box" style="margin-top: 1rem;"></div>
@@ -455,86 +291,77 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <ul id="centered_in_page_toc" class="list-none"></ul>
 </details>
 <!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="新しいタブで開く" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
-
-<article class="bcls-article">
-  <h1>カスタムドメインおよびSSLを設定する</h1>
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a>  <article class="bcls-article">
+  <h1>カスタムドメインと SSL の設定</h1>
   <summary>このトピックでは、Web エクスペリエンスのカスタムドメインと SSL を構成する方法について説明します。</summary>
   <section class="bcls-section">
-    <p>Web エクスペリエンスを初めて作成すると、の形式でランダムドメインが割り当てられます<code translate="No">&lt;site-slug&gt;.bcvp0rtal.com </code>。たとえば <code translate="No">http://site-148393.bcvp0rtal.com</code> となります。エクスペリエンスが公開されると、閲覧者はこのドメインのサイトにアクセスできるようになります。Brightcove Engage は、Brightcove が提供するドメインまたは独自のカスタムドメインで Web エクスペリエンスを公開する機能を提供します。</p>
-    <p>Web エクスペリエンスを複数の URL に割り当てることもできます。これにより、パブリッシャーはサイトを複製することなく、同じサイトを異なる機能に使用できます。たとえば、キャンペーンやメインの動画ポータルとして使用したい動画サイトがある場合、異なる URL をブランド化して、それらをすべて同じサイトに割り当てることができます。サイトの複製は必要ありません。また、URLは必要でなくなれば簡単に削除できます。</p>
+    <p>Web エクスペリエンスを初めて作成すると、の形式でランダムドメインが割り当てられます<code translate="No">&lt;site-slug&gt;.bcvp0rtal.com </code>。たとえば、<code translate="No">http://site-148393.bcvp0rtal.com</code>。エクスペリエンスが公開されると、閲覧者はこのドメインのサイトにアクセスできるようになります。Brightcove Engage は、ブライトコーブが提供するドメインまたは独自のカスタムドメインで Web エクスペリエンスを公開する機能を提供します。</p>
+    <p>Web エクスペリエンスを複数の URL に割り当てることもできます。これにより、パブリッシャーはサイトを複製することなく、同じサイトを異なる機能に使用できます。たとえば、キャンペーンやメインの動画ポータルとして使用したい動画サイトがある場合、異なる URL をブランド化して、それらをすべて同じサイトに割り当てることができます。サイトの重複は不要で、不要になったURLを簡単に削除できます。</p>
   </section>
   <section class="bcls-section">
-    <h2 id="bcdomain">Brightcove 提供ドメインを使用する</h2>
-    <p>Brightcove が提供するドメインを使用すると、IT 部門と協力してカスタム CNAME を作成したり、レジストラに新しいドメイン名を登録したりすることなく、ウェブエクスペリエンスのドメインをすばやく簡単に作成できます。これらは「箱から出て」利用可能で、ボタンをクリックするだけで実装できます。使用可能なドメインは次のとおりです。</p>
+    <h2 id="bcdomain">ブライトコーブが提供するドメインを使用する</h2>
+    <p>ブライトコーブが提供するドメインを使用すると、IT 部門と協力してカスタム CNAME を作成したり、レジストラに新しいドメイン名を登録したりすることなく、ウェブエクスペリエンスのドメインをすばやく簡単に作成できます。これらは「箱から出て」利用可能で、ボタンをクリックするだけで実装できます。使用可能なドメインは次のとおりです。</p>
     <ul>
       <li>brightcoveengage.dove</li>
       <li>bcvp0rtal.com (デフォルトでウェブエクスペリエンスに割り当てられている)</li>
     </ul>
-    <p>これらはすべてSSLをサポートします。SSLサイトにアクセスするには、URLにhttpsを追加するだけです。例： <code translate="No">https://mysite.brightcoveengage.video</code></p>
+    <p>それらのすべてがSSLをサポートしています。SSLサイトにアクセスするには、URLにhttpsを追加するだけです。例えば、<code translate="No">https://mysite.brightcoveengage.video</code></p>
   </section>
   <section class="bcls-section">
-    <h2 id="puburl">（パブリッシャーが登録した）カスタムドメインを使用する</h2>
-    <p>Web エクスペリエンスは、登録した独自のカスタムドメインでホストすることもできます。URLをブランディングし、現在のWebサイト/URLの命名構造と一致させることができます。これには、ドメイン名を登録し、その後、ホスティングプロバイダーとカスタムCNAMEレコードを設定する必要があります。CNAMEレコードを設定する方法については、<a href="#cname">下のセクション</a>を参照してください。</p>
+    <h2 id="puburl">カスタムドメインの使用（パブリッシャー登録済み）</h2>
+    <p>Web エクスペリエンスは、登録した独自のカスタムドメインでホストすることもできます。これにより、URLをブランド化して、現在のウェブサイト/URL命名構造と一致させることができます。これには、ドメイン名を登録し、ホスティングプロバイダーにカスタム CNAME レコードを設定する必要があります。を参照してください<a href="#cname">以下のセクション</a> CNAMEレコードの構成方法については。</p>
   </section>
   <section class="bcls-section">
-    <h2 id="create">カスタムドメインを作成する</h2>
-    <p>カスタムドメインを作成するには、次の手順を行います。</p>
+    <h2 id="create">カスタムドメインの作成</h2>
+    <p>カスタムドメインを作成するには、次の手順を実行します。</p>
     <ol class="bcls-tasklist-restart">
-      <li>Brightcove のエンゲージメントを開きます。</li>
-      <li>「<strong>プロジェクト</strong>」ページを開き、ページの上部にある「<strong>設定</strong>」リンクをクリックします。</li>
-      <li>左側のナビゲーションで、[ <strong>カスタムドメインと SSL </strong> ] リンクをクリックします。</li>
-      <li>[<strong>カスタムドメインの作成</strong>]をクリックします。</li>
+      <li>Brightcove Engage」を開きます。</li>
+      <li>「<strong>プロジェクト</strong>」ページを開き、ページの上部にある「<strong>設定」</strong>リンクをクリックします。</li>
+      <li>左側のナビゲーションで、[ <strong>カスタムドメインと SSL] </strong>リンクをクリックします。</li>
+      <li>[ <strong>カスタムドメインの作成] をクリックします</strong>。</li>
       <li>使用するドメインオプションを選択します。
         <ul>
-          <li><strong>brightcoveengage.Video </strong> -サイトドメインの形式になります<code translate="No">&lt;your domain&gt;.brightcoveengage.video</code>。</li>
-          <li>[ <strong>カスタム</strong> ]: 自分のカスタムドメインでサイトをホストするときに選択します。このオプションを選択すると、<a href="#cname">ホスティングプロバイダーとCNAMEレコードを設定する</a>ことも必要になります。</li>
+          <li><strong> brightcoveengage.Video </strong> -サイトドメインの形式になります<code translate="No">&lt;your domain&gt;.brightcoveengage.video</code>。</li>
+          <li><strong> [ カスタム] </strong> : 自分のカスタムドメインでサイトをホストするときに選択します。このオプションを選択するときは、ホスティングプロバイダーで CNAME <a href="#cname">レコードを構成する必要もあります</a>。</li>
         </ul>
       </li>
       <li>ドメイン名を入力します。ドメインが有効か無効かを示すメッセージが表示されます。ドメイン名が無効の場合は、新しいドメイン名を入力します。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="カスタムドメインの作成" src="/assets/images/experiences/create-custom-domain.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="create custom domain" src="/assets/images/experiences/create-custom-domain.png" /></figure>
       </li>
-      <li>Brightcove が提供するドメインを使用してサイトを公開する場合は、<strong>このドメインに SSL を適用するためのオプションがあります</strong>。閲覧者がサイトにアクセスした場合に、非SSLバージョンのサイトからのリダイレクトを有効にするには、［<strong>このドメインに SSL を適用する</strong>］をオンにします。</li>
-      <li>自身のカスタムドメインにサイトを公開する場合、SSLを使用してサイトのセキュリティーを確保するオプションがあります。SSLを使用してサイトのセキュリティーを確保する場合は、[<strong>SSLの使用</strong>]チェックボックスを選択します。SSL の使用については、「SSL を使用した<a href="/experiences/securing-web-experience-ssl.html"> Web エクスペリエンスの保護</a>」を参照してください。</li>
-      <li>この URL <strong>を別のURLにリダイレクトするには、[リダイレクトを有効にする</strong> ] をオンにします。通常、これはこのドメインがしばらく使用された後にのみチェックされます。このオプションを選択すると、この既存の<strong> URL をリダイレクトするリダイレクト先の</strong> URL を入力します。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/enable-redirect.png"/></figure>
-        [ <strong>永続的なリダイレクトを使用する (HTTP ステータスコード 301) </strong> ] をオンにして、リダイレクトが永続的であることを示します。検索エンジンのスパイダーは、Webページの応答ヘッダーに301ステータスコードを見つけると、それはこのWebページが存在しなくなったことを理解し、新しいものとインデックス付きURLを置き換えます。このオプションでは、古い Web ページのトラフィックとページランクが保持されます。 </li>
-      <li>[<strong>保存</strong>]をクリックします。設定されたドメインのリストが表示されます。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="ドメインの一覧" src="/assets/images/experiences/domain-list.png"/></figure>
-        <aside class="bcls-aside bcls-aside--information">注：Brightcove 提供ドメインを使用する場合、SSLステータスは常に<strong>提供</strong>になります。これは、サイト URL の先頭に<strong> https://</strong>を追加すると、ブラウザと Brightcove Engage サイト間のデータ転送が安全であることを示しています。</aside>
+      <li>ブライトコーブが提供するドメインを使用してサイトを公開する場合は、このドメインに SSL <strong>を適用するオプションがあります</strong>。小切手<strong>このドメインにSSLを適用する</strong>閲覧者がサイトにアクセスした場合に、非SSLバージョンのサイトからのリダイレクトを有効にします。</li>
+      <li>サイトを独自のカスタムドメインに公開する場合は、SSL を使用してサイトをセキュリティで保護するオプションがあります。SSL <strong>を使用してサイトを保護するには、</strong>  [SSL を使用] チェックボックスをオンにします。SSL の使用については、「SSL を使用した Web <a href="/experiences/securing-web-experience-ssl.html">エクスペリエンスの保護」を参照してください</a>。</li>
+      <li>小切手<strong>リダイレクトを有効にする</strong>このURLを別のURLにリダイレクトします。通常、これはこのドメインがしばらく使用された後にのみチェックされます。このオプションを選択した場合は、<strong>リダイレクトURL</strong>この既存のURLはにリダイレクトする必要があります。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/enable-redirect.png" /></figure>
+        [ <strong>永続的なリダイレクトを使用する (HTTP ステータスコード 301)</strong> ] をオンにして、リダイレクトが永続的であることを示します。検索エンジンのスパイダーは、Webページの応答ヘッダーに301ステータスコードを見つけると、それはこのWebページが存在しなくなったことを理解し、新しいものとインデックス付きURLを置き換えます。このオプションでは、古い Web ページのトラフィックとページランクが保持されます。 </li>
+      <li>[ <strong>保存] をクリックします</strong>。設定されたドメインのリストが表示されます。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="list of domains" src="/assets/images/experiences/domain-list.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">注:ブライトコーブ提供ドメインを使用する場合、SSL ステータスは常に [ <strong>提供済み] になります</strong>。これは、サイト URL の先頭に<strong> https://</strong>を追加することで、ブラウザと Brightcove Engage サイト間のデータ転送が安全であることを示しています。</aside>
       </li>
       <li>必要に応じて他のドメインを作成します。</li>
     </ol>
-    <p>ドメインを編集または削除するには、編集（<img alt="編集アイコン" src="/assets/images/experiences/edit-icon.png"/>）ボタンまたは削除（<img alt="アイコンを削除" src="/assets/images/experiences/delete-icon.png"/>）ボタンをクリックします。</p>
-    <p>カスタムドメインを作成したら、エクスペリエンスのプロパティの一部としてエクスペリエンスに割り当てることができます。詳細については、「<a href="/experiences/assigning-custom-domain-web-experience.html">カスタムドメインを Web エクスペリエンスに割り当てる</a>」を参照してください。</p>
+    <p>ドメインを編集または削除するには、編集（<img alt="edit icon" src="/assets/images/experiences/edit-icon.png" />) または削除 ()<img alt="delete icon" src="/assets/images/experiences/delete-icon.png" />）ボタン。</p>
+    <p>カスタムドメインを作成したら、エクスペリエンスのプロパティの一部としてエクスペリエンスに割り当てることができます。詳細については、「カスタムドメインを Web <a href="/experiences/assigning-custom-domain-web-experience.html">エクスペリエンスに割り当てる」を参照してください</a>。</p>
   </section>
   <section class="bcls-section">
     <h2 id="cname">お客様のホスティングプロバイダーでCNAMEレコードを構成する</h2>
-    <aside class="bcls-aside bcls-aside--information">注：CNAMEレコードの設定が必要なのは、カスタムドメインをサイトに割り当てるときだけです。Brightcove 提供ドメインを使用するサイトには、CNAMEレコードを作成する必要は「ありません」。</aside>
-    <p>CNAME（正規名）レコードを設定する手順は、お客様のホスティングプロバイダーによって異なります。使用する各カスタムドメインに、CNAMEレコードを設定する必要があります。サイトが SSL を使用するように設定されている場合、CNAME レコードは CloudFront URL をポイントします。詳細は<a href="/experiences/securing-web-experience-ssl.html">、「SSL を使用した Web エクスペリエンスの保護</a>」を参照してください。CNAME として構成するには、カスタムドメインにサブドメインを含める必要があることに注意してください。たとえば、CNAME <code translate="No">brightcovelearning.com </code>を設定できるように、<code translate="No">engage </code>前に配置する必要があります。</p>
+    <aside class="bcls-aside bcls-aside--information">注:CNAMEレコードの設定が必要なのは、カスタムドメインをサイトに割り当てるときだけです。CNAME レコードは、ブライトコーブが提供するドメインを使用しているサイトに対して作成する必要はありません。</aside>
+    <p>CNAME（正規名）レコードを設定する手順は、お客様のホスティングプロバイダーによって異なります。使用するカスタムドメインごとに CNAME レコードを設定する必要があります。サイトが SSL を使用するように設定されている場合、CNAME レコードは CloudFront URL をポイントします。詳細は、「SSL を使用した Web <a href="/experiences/securing-web-experience-ssl.html">エクスペリエンスの保護」</a>を参照してください。CNAME として構成するには、カスタムドメインにサブドメインを含める必要があることに注意してください。たとえば、<code translate="No">engage </code><code translate="No">brightcovelearning.com </code>前に置かなければならないので、CNAME。</p>
     <p>CNAME 値は、カスタムドメインと SSL 設定の一部として表示されます。</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/cname-list.png"/></figure>
-    <p>この例では、<code translate="No">engage.brightcovelearning.com</code> のカスタムドメインの場合、<strong>CNAME</strong> レコードを追加し、<code translate="No">engage </code> のホストを追加して、それを <code translate="No"> 5e84f4c7d58950766328a37d.bcvp0rtal.com</code> にポイントします。 </p>
-    <p>この手順については、ネットワーク管理者または Web ホスティングプロバイダーに問い合わせる必要があります。DNSの変更は最大で48時間かかることがあります。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/cname-list.png" /></figure>
+    <p>この例では、のカスタムドメインに対して<code translate="No">engage.brightcovelearning.com</code>、<strong> CNAME</strong>レコードを追加し、のホストを追加します。<code translate="No">engage </code><code translate="No"> 5e84f4c7d58950766328a37d.bcvp0rtal.com</code>と指し示すんだ </p>
+    <p>この手順については、ネットワーク管理者または Web ホスティングプロバイダーに問い合わせる必要があります。DNS の変更が有効になるには、最大 48 時間かかる場合があります。</p>
   </section>
   <section class="bcls-section">
-    <h2 id="secure">SSLを使用してサイトのセキュリティーを確保する</h2>
-    <aside class="bcls-aside bcls-aside--information">注：SSL 証明書を使用する場合は、いかなる場合でもプライベートキーを共有したり、Brightcove サポートに送信したりしないでください。</aside>
+    <h2 id="secure">SSL によるサイトの保護</h2>
+    <aside class="bcls-aside bcls-aside--information">注:SSL 証明書を使用するときは、秘密鍵を共有したり、ブライトコーブサポートに送信したりしないでください。</aside>
     <p>SSL &nbsp;を使用したポータル・エクスペリエンスのセキュリティ保護には、次の 2 つのオプションがあります。</p>
     <ol class="bcls-tasklist-restart">
-      <li>割り当てられたサイトスラッグを使用して公開されているサイト（例<code translate="No">&lt;site-slug&gt;.bcvp0rtal.com</code>）、または Brightcove 提供ドメイン（<code translate="No">&lt;site&gt;.brightcoveengage.video</code>）を使用しているサイトでは、https をサポートするための設定は必要ありません。URL の先頭に<strong> https://</strong>を追加すると、ブラウザとエクスペリエンスの間のデータ転送がセキュリティで保護されます。また、[ <strong>このドメインに SSL を強制 (推奨) </strong> ] を選択して、ビューアがサイトにアクセスした場合に、非 SSL バージョンのサイトからのリダイレクトを有効にすることもできます。</li>
-      <li>カスタムドメインでホストされているサイトの場合は、ドメイン名を入力するときに [ <strong> SSL を使用</strong> ] オプションをオンにします。証明書情報を入力するよう表示があります。詳細については、「<a href="/experiences/securing-web-experience-ssl.html"> SSL を使用した Web エクスペリエンスの保護</a>」を参照してください。</li>
+      <li>割り当てられたサイトスラッグを使用して公開されているサイト（例<code translate="No">&lt;site-slug&gt;.bcvp0rtal.com</code>）、またはブライトコーブ提供のドメイン（<code translate="No">&lt;site&gt;.brightcoveengage.video</code>）を使用しているサイトについては、httpsをサポートする必要があります。追加する<strong>https：//</strong> URLの先頭に移動すると、ブラウザとエクスペリエンス間のデータ転送が保護されます。また、[このドメインに SSL <strong>を強制 (推奨) </strong> ] を選択して、ビューアがサイトにアクセスした場合に、非 SSL バージョンのサイトからのリダイレクトを有効にすることもできます。</li>
+      <li>カスタムドメインでホストされているサイトについては、<strong> SSLを使用する</strong>ドメイン名を入力するときのオプション。その後、証明書情報の入力を求められます。詳細については、「SSL を使用した Web <a href="/experiences/securing-web-experience-ssl.html">エクスペリエンスの保護」を参照してください</a>。</li>
     </ol>
   </section>
 </article>
-
-<!-- complete bootstrap layout -->
+ <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
       
@@ -548,11 +375,18 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  ページの最終更新日21 May 2021
+</div>
+
+
+ <footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+        <img src="https://support.brightcove.com/site-assets/images/site/SVG/COVE004_Brightcove_Logo_093020_RGB_KO.svg" class="bc-footer-logo" alt="Brightcove">
 
-        <h2>Brightcove サポート</h2>
+        <h2>ブライトコーブのサポート</h2>
 
         <ul class="menu">
           <li>
@@ -579,14 +413,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <a href="https://studio.support.brightcove.com/training/register-training.html">コースに登録する</a>
           </li>
           <li>
-            <a href="https://university.brightcove.com/">Brightcove University</a>
+            <a href="https://university.brightcove.com/">ブライトコーブ大学</a>
           </li>
         </ul>
 
       </nav>
       <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
 
-        <h2>Brightcove</h2>
+        <h2>ブライトコーブ</h2>
 
         <ul class="menu">
           <li>
@@ -605,12 +439,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <table>
           <tr>
             <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> ブライトコーブ株式会社すべての権利を保有しています。</div>
             </td>
             <td><a href="https://www.brightcove.com/en/legal/privacy">プライバシー</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">利用規約</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a>
                 </div>
               </div>
             </td>
@@ -638,8 +472,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     });
   
 
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+</script>   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
@@ -648,17 +481,22 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
   
   <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/learning-paths/learning-paths.js"></script>
   <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
   <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
   <script src="/assets/js/sites_nav.js"></script>
   <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
   <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/sajari-reindex.js"></script>
   <script src="/assets/js/feedback.js"></script>
   
   <script src="/assets/js/sajari-search-foot.js"></script>
   
+	<script translate="no">
+  feather.replace()
+</script>
   <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
+  <style translate="no">
     a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
       background-color: lightblue;
     }
@@ -687,4 +525,4 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 </body>
 
-</html>
+</html> 
